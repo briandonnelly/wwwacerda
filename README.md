@@ -57,7 +57,7 @@ The following image explains how these information are presented:
 
 ## Usage
 
-Load the [application](https://sghctoma.github.io/wwwacerda) in a web browser,
+Load the [application](https://briandonnelly.github.io/wwwacerda) in a web browser,
 and start clicking :) The application only "replaces" the solo cards, i.e. it
 won't give you an initial Turn Order spot for Lacerda - you still have to do it
 as written in the rulebook. Your first click reveals Lacerda's first action. If
