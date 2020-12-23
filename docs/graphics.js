@@ -327,6 +327,9 @@ class Display {
         var loadedImages = 0;
         var numImages = Object.keys(this.sources).length;
 
+        var currpath = window.location.pathname;
+        var dir = currpath.substring(0, currpath.lastIndexOf('/'));
+
         for (var src in this.sources) {
             images[src] = new Image();
             images[src].onload = () => {
@@ -334,7 +337,7 @@ class Display {
                     this.imagesLoaded(images);
                 }
             };
-            images[src].src = this.sources[src];
+            images[src].src = dir+this.sources[src];
         }
     }
 
