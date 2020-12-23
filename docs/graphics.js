@@ -347,7 +347,7 @@ class Display {
             y: 127,
             width: this.width,
             align: 'center',
-            fontFamily: 'Continuum Medium Regular',
+            fontFamily: 'Segoe UI',
             fontSize: 36,
             text: '',
             fill: '#E5E5DE'
@@ -357,7 +357,7 @@ class Display {
             y: 788, 
             width: this.width,
             align: 'center',
-            fontFamily: 'Continuum Medium Regular',
+            fontFamily: 'Segoe UI',
             fontSize: 147,
             text: '1',
             fill: 'white'
@@ -367,7 +367,7 @@ class Display {
             y: 265,
             width: this.width,
             align: 'center',
-            fontFamily: 'Continuum Medium Regular',
+            fontFamily: 'Segoe UI',
             fontSize: 108,
             text: '',
             fill: 'white'
