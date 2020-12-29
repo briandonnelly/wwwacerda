@@ -74,7 +74,9 @@ canvas {
     visibility: hidden;
     width: 300px;
     background-color: #1f8d7b;
+    text-align: left;
     color: #ffffff;
+    font-size: 10pt;
     font-weight: normal;
     padding: 12px;
     border-radius: 4px;
