@@ -1,6 +1,7 @@
 class Display {
-    constructor(lacerda) {
+    constructor(lacerda,help) {
         this.lacerda = lacerda;
+        this.help = help;
         this.width = 845;
         this.height = 1515;
 
@@ -22,6 +23,7 @@ class Display {
             // general
             background: '/assets/background.png',
             backbutton: '/assets/buttons/backbutton.png',
+            helpbutton: '/assets/buttons/helpbutton.png',
 
             // colonization phase; travel
             shuttle: '/assets/shuttle-icon-centered@3x.png',
@@ -130,6 +132,7 @@ class Display {
     setupLayer() {
         this.layer.add(this.images.background);
         this.layer.add(this.buttons.backbutton);
+        this.layer.add(this.buttons.helpbutton);
         this.layer.add(this.labels.status);
         this.layer.add(this.images.colonization_phase_indicator);
         this.layer.add(this.images.shuttle_phase_indicator);
@@ -251,8 +254,10 @@ class Display {
             this.buttons.next_round.show();
             this.images.shuttle_nogo.show();
         }
-
         this.layer.draw();
+        if (this.help.enabled) {
+            this.help.display(state.mission,state.action,this.lacerda.currentPhase == "SHUTTLE" ? true : false);
+        }
     }
 
     imagesLoaded(images) {
@@ -347,7 +352,7 @@ class Display {
             y: 127,
             width: this.width,
             align: 'center',
-            fontFamily: 'Segoe UI',
+            fontFamily: 'Continuum Medium Regular',
             fontSize: 36,
             text: '',
             fill: '#E5E5DE'
@@ -357,7 +362,7 @@ class Display {
             y: 788, 
             width: this.width,
             align: 'center',
-            fontFamily: 'Segoe UI',
+            fontFamily: 'Continuum Medium Regular',
             fontSize: 147,
             text: '1',
             fill: 'white'
@@ -367,7 +372,7 @@ class Display {
             y: 265,
             width: this.width,
             align: 'center',
-            fontFamily: 'Segoe UI',
+            fontFamily: 'Continuum Medium Regular',
             fontSize: 108,
             text: '',
             fill: 'white'
@@ -436,6 +441,18 @@ class Display {
             this.renderScreen();
         });
 
+        // HELP
+        this.buttons['helpbutton'] = new Konva.Image({
+            image: images.helpbutton,
+            x: this.width - images.helpbutton.width,
+        });
+        this.buttons['helpbutton'].on('click tap', () => {
+            this.help.showhide();
+            if(this.help.enabled) {
+                this.help.display(this.lacerda.currentState().mission,this.lacerda.currentState().action,this.lacerda.currentPhase == "SHUTTLE" ? true : false);
+            }
+        });
+
         // NEXT ROUND
         this.buttons['next_round'] = new Konva.Image({
             image: images.next_round,
@@ -473,6 +490,8 @@ class Display {
         	this.lacerda.currentPhase = 'SHUTTLE';
             this.renderScreen();
         });
+
+       
     }
 
     setupShapes() {

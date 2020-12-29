@@ -4,28 +4,28 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes" /> 
     <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
-    <style>
-    @font-face {
-        font-family: 'Continuum Medium Regular';
-        font-style: normal;
-        font-weight: normal;
-        src: local('Continuum Medium Regular'), url('/assets/Contm___.woff') format('woff');
-    }
-    canvas {
-        padding: 0;
-        margin: auto;
-        display: block;
-    }
-    </style>
+    <link rel="stylesheet" href="lacerda.css">
+    <script>
+            function createPopup(popupid) {
+                var popup = document.getElementById(popupid);
+                popup.classList.toggle("show");
+            }
+    </script>
     <script src="https://unpkg.com/konva@4.1.6/konva.min.js"></script>
     </head>
     <body>
-        <div align="center" id="container"></div>
+        <div id="wrapper" style="">
+            <div id="container"></div>
+            <div  id="help">
+                <div id="helpinset"></div></div>
+        </div>
         <script src="lacerda.js"></script>
+        <script src="help.js"></script>
         <script src="graphics.js"></script>
         <script>
             var lacerda = new Lacerda();
-            var display = new Display(lacerda);
+            var help = new Help();
+            var display = new Display(lacerda,help);
 
             window.onresize = function() {
                 var c = document.getElementById("container");

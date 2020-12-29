@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Continuum Medium Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Continuum Medium Regular'), url('./assets/Contm___.woff') format('woff');
+}
+body {
+    background-color: #f5f2f2;
+}
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+#wrapper {
+    text-align: center; 
+    overflow: hidden;
+}
+#container {
+    display: inline-block;
+}
+#help {
+    display: hidden; 
+    width: 50%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 20px;
+}
+#help h1 {
+    color: #1f8d7b;
+    font-size: 12pt;
+}
+#help hr {
+    height: 2px;
+    color: #1f8d7b;
+    background-color: #1f8d7b;
+}
+#help p {
+    font-size: 10pt;
+}
+#help ul {
+    font-size: 10pt;
+    list-style-type: square;
+}
+#help a {
+    font-weight: bold;
+    color: #1f8d7b;
+}
+#topmenu {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#topmenu .menu {
+    display: inline-block;
+
+    width: 30%;
+}
+.imgpara {
+    clear:both;
+}
+.imgparafloat {
+    float: left;
+    padding: 0 20px 20px 0;
+    width: 50px;
+}
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.popup .popuptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: #1f8d7b;
+    color: #ffffff;
+    font-weight: normal;
+    padding: 12px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -150px;
+}
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+.pageup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
